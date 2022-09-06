@@ -7,25 +7,49 @@
 
 import SwiftUI
 
+/// Determines which sheet is currently active for the main view.
+enum ActiveSheet: Hashable, Identifiable {
+    case picker, editDetails
+
+    var id: ActiveSheet { self }
+}
+
 struct ContentView: View {
     @State private var image: Image?
-    @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     
+    @State private var activeSheet: ActiveSheet?
+    
     var body: some View {
-        VStack {
-            image?
-                .resizable()
-                .scaledToFit()
-            
-            Button("Select image") {
-                showingImagePicker = true
+        NavigationView {
+            VStack {
+                image?
+                    .resizable()
+                    .scaledToFit()
+            }
+            .navigationTitle("FaceName")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        activeSheet = .picker
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(item: $activeSheet) { item in
+                switch item {
+                case .picker:
+                    ImagePicker(image: $inputImage)
+                case .editDetails:
+                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", photo: inputImage ?? UIImage()))
+                }
+            }
+            .onChange(of: inputImage) {
+                _ in loadImage()
+                activeSheet = .editDetails
             }
         }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $inputImage)
-        }
-        .onChange(of: inputImage) { _ in loadImage() }
     }
     
     func loadImage() {

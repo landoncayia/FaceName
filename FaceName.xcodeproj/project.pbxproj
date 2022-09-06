@@ -14,6 +14,8 @@
 		C74BD6A828C3E8010036531A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C74BD6A528C3E8000036531A /* README.md */; };
 		C74BD6A928C3E8010036531A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C74BD6A728C3E8000036531A /* .gitignore */; };
 		C74BD6AB28C3E8CF0036531A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AA28C3E8CF0036531A /* ImagePicker.swift */; };
+		C74BD6AD28C3F56D0036531A /* EditImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */; };
+		C74BD6AF28C3F6300036531A /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AE28C3F6300036531A /* UserImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		C74BD6A528C3E8000036531A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C74BD6A728C3E8000036531A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C74BD6AA28C3E8CF0036531A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImageDetailsView.swift; sourceTree = "<group>"; };
+		C74BD6AE28C3F6300036531A /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				C74BD69728C3E7AD0036531A /* FaceNameApp.swift */,
 				C74BD69928C3E7AD0036531A /* ContentView.swift */,
+				C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */,
+				C74BD6AE28C3F6300036531A /* UserImage.swift */,
 				C74BD6AA28C3E8CF0036531A /* ImagePicker.swift */,
 				C74BD69B28C3E7AE0036531A /* Assets.xcassets */,
 				C74BD69D28C3E7AE0036531A /* Preview Content */,
@@ -156,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74BD6AD28C3F56D0036531A /* EditImageDetailsView.swift in Sources */,
+				C74BD6AF28C3F6300036531A /* UserImage.swift in Sources */,
 				C74BD6AB28C3E8CF0036531A /* ImagePicker.swift in Sources */,
 				C74BD69A28C3E7AD0036531A /* ContentView.swift in Sources */,
 				C74BD69828C3E7AD0036531A /* FaceNameApp.swift in Sources */,
