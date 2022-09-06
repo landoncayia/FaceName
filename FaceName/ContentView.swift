@@ -31,9 +31,14 @@ struct ContentView: View {
                     NavigationLink {
                         Text("User image placeholder")
                     } label: {
-                        Image(uiImage: userImage.image)
-                            .resizable()
-                            .scaledToFit()
+                        HStack {
+                            Image(uiImage: userImage.image)
+                                .resizable()
+                                .frame(maxWidth: 100, maxHeight: 100)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            
+                            Text(userImage.name)
+                        }
                     }
                 }
             }
