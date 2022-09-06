@@ -27,7 +27,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(userImages) { userImage in
+                ForEach(userImages.sorted(by: { $0.name < $1.name })) { userImage in
                     NavigationLink {
                         Text("User image placeholder")
                     } label: {
