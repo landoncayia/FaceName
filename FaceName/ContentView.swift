@@ -29,7 +29,7 @@ struct ContentView: View {
             List {
                 ForEach(userImages.sorted(by: { $0.name < $1.name })) { userImage in
                     NavigationLink {
-                        Text("User image placeholder")
+                        ImageFullView(userImage: userImage)
                     } label: {
                         HStack {
                             Image(uiImage: userImage.image)
