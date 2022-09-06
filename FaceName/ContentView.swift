@@ -15,17 +15,27 @@ enum ActiveSheet: Hashable, Identifiable {
 }
 
 struct ContentView: View {
+    @State private var userImages: [UserImage]
+    
     @State private var image: Image?
     @State private var inputImage: UIImage?
     
     @State private var activeSheet: ActiveSheet?
     
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedUserImages")
+    
     var body: some View {
         NavigationView {
-            VStack {
-                image?
-                    .resizable()
-                    .scaledToFit()
+            List {
+                ForEach(userImages) { userImage in
+                    NavigationLink {
+                        Text("User image placeholder")
+                    } label: {
+                        Image(uiImage: userImage.image)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
             }
             .navigationTitle("FaceName")
             .toolbar {
@@ -42,7 +52,9 @@ struct ContentView: View {
                 case .picker:
                     ImagePicker(image: $inputImage)
                 case .editDetails:
-                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", image: inputImage ?? UIImage()))
+                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", image: inputImage ?? UIImage())) { newUserImage in
+                        addImage(newUserImage)
+                    }
                 }
             }
             .onChange(of: inputImage) {
@@ -50,6 +62,30 @@ struct ContentView: View {
                 activeSheet = .editDetails
             }
         }
+    }
+    
+    init() {
+        do {
+            let data = try Data(contentsOf: savePath)
+            let decodedData = try JSONDecoder().decode([UserImage].self, from: data)
+            _userImages = State(initialValue: decodedData)
+        } catch {
+            _userImages = State(initialValue: [])
+        }
+    }
+    
+    func save() {
+        do {
+            let data = try JSONEncoder().encode(userImages)
+            try data.write(to: savePath, options: [.atomicWrite, .completeFileProtection])
+        } catch {
+            print("Unable to save user image data.")
+        }
+    }
+    
+    func addImage(_ newUserImage: UserImage) {
+        userImages.append(newUserImage)
+        save()
     }
     
     func loadImage() {
