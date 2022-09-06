@@ -42,7 +42,7 @@ struct ContentView: View {
                 case .picker:
                     ImagePicker(image: $inputImage)
                 case .editDetails:
-                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", photo: inputImage ?? UIImage()))
+                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", image: inputImage ?? UIImage()))
                 }
             }
             .onChange(of: inputImage) {

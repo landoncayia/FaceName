@@ -16,6 +16,7 @@
 		C74BD6AB28C3E8CF0036531A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AA28C3E8CF0036531A /* ImagePicker.swift */; };
 		C74BD6AD28C3F56D0036531A /* EditImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */; };
 		C74BD6AF28C3F6300036531A /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AE28C3F6300036531A /* UserImage.swift */; };
+		C792151728C7A138004CB246 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792151628C7A138004CB246 /* FileManager-DocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		C74BD6AA28C3E8CF0036531A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImageDetailsView.swift; sourceTree = "<group>"; };
 		C74BD6AE28C3F6300036531A /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		C792151628C7A138004CB246 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				C74BD69728C3E7AD0036531A /* FaceNameApp.swift */,
 				C74BD69928C3E7AD0036531A /* ContentView.swift */,
+				C792151628C7A138004CB246 /* FileManager-DocumentsDirectory.swift */,
 				C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */,
 				C74BD6AE28C3F6300036531A /* UserImage.swift */,
 				C74BD6AA28C3E8CF0036531A /* ImagePicker.swift */,
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C792151728C7A138004CB246 /* FileManager-DocumentsDirectory.swift in Sources */,
 				C74BD6AD28C3F56D0036531A /* EditImageDetailsView.swift in Sources */,
 				C74BD6AF28C3F6300036531A /* UserImage.swift in Sources */,
 				C74BD6AB28C3E8CF0036531A /* ImagePicker.swift in Sources */,

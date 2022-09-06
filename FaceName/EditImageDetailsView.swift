@@ -17,7 +17,7 @@ struct EditImageDetailsView: View {
     var body: some View {
         Form {
             Section {
-                Image(uiImage: userImage.photo)
+                Image(uiImage: userImage.image)
                     .resizable()
                     .scaledToFit()
             }
