@@ -18,6 +18,7 @@
 		C74BD6AF28C3F6300036531A /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74BD6AE28C3F6300036531A /* UserImage.swift */; };
 		C792151728C7A138004CB246 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792151628C7A138004CB246 /* FileManager-DocumentsDirectory.swift */; };
 		C792151928C7AE7B004CB246 /* ImageFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792151828C7AE7B004CB246 /* ImageFullView.swift */; };
+		C792151B28C7B196004CB246 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C792151A28C7B196004CB246 /* ContentView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		C74BD6AE28C3F6300036531A /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		C792151628C7A138004CB246 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		C792151828C7AE7B004CB246 /* ImageFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFullView.swift; sourceTree = "<group>"; };
+		C792151A28C7B196004CB246 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				C74BD69728C3E7AD0036531A /* FaceNameApp.swift */,
 				C74BD69928C3E7AD0036531A /* ContentView.swift */,
+				C792151A28C7B196004CB246 /* ContentView-ViewModel.swift */,
 				C792151828C7AE7B004CB246 /* ImageFullView.swift */,
 				C792151628C7A138004CB246 /* FileManager-DocumentsDirectory.swift */,
 				C74BD6AC28C3F56D0036531A /* EditImageDetailsView.swift */,
@@ -173,6 +176,7 @@
 				C74BD6AF28C3F6300036531A /* UserImage.swift in Sources */,
 				C792151928C7AE7B004CB246 /* ImageFullView.swift in Sources */,
 				C74BD6AB28C3E8CF0036531A /* ImagePicker.swift in Sources */,
+				C792151B28C7B196004CB246 /* ContentView-ViewModel.swift in Sources */,
 				C74BD69A28C3E7AD0036531A /* ContentView.swift in Sources */,
 				C74BD69828C3E7AD0036531A /* FaceNameApp.swift in Sources */,
 			);

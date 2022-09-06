@@ -15,19 +15,14 @@ enum ActiveSheet: Hashable, Identifiable {
 }
 
 struct ContentView: View {
-    @State private var userImages: [UserImage]
-    
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
+    @StateObject private var viewModel = ViewModel()
     
     @State private var activeSheet: ActiveSheet?
-    
-    let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedUserImages")
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(userImages.sorted(by: { $0.name < $1.name })) { userImage in
+                ForEach(viewModel.userImages.sorted(by: { $0.name < $1.name })) { userImage in
                     NavigationLink {
                         ImageFullView(userImage: userImage)
                     } label: {
@@ -55,47 +50,18 @@ struct ContentView: View {
             .sheet(item: $activeSheet) { item in
                 switch item {
                 case .picker:
-                    ImagePicker(image: $inputImage)
+                    ImagePicker(image: $viewModel.inputImage)
                 case .editDetails:
-                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", image: inputImage ?? UIImage())) { newUserImage in
-                        addImage(newUserImage)
+                    EditImageDetailsView(userImage: UserImage(id: UUID(), name: "", image: viewModel.inputImage ?? UIImage())) { newUserImage in
+                        viewModel.addImage(newUserImage)
                     }
                 }
             }
-            .onChange(of: inputImage) {
-                _ in loadImage()
+            .onChange(of: viewModel.inputImage) {
+                _ in viewModel.loadImage()
                 activeSheet = .editDetails
             }
         }
-    }
-    
-    init() {
-        do {
-            let data = try Data(contentsOf: savePath)
-            let decodedData = try JSONDecoder().decode([UserImage].self, from: data)
-            _userImages = State(initialValue: decodedData)
-        } catch {
-            _userImages = State(initialValue: [])
-        }
-    }
-    
-    func save() {
-        do {
-            let data = try JSONEncoder().encode(userImages)
-            try data.write(to: savePath, options: [.atomicWrite, .completeFileProtection])
-        } catch {
-            print("Unable to save user image data.")
-        }
-    }
-    
-    func addImage(_ newUserImage: UserImage) {
-        userImages.append(newUserImage)
-        save()
-    }
-    
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
     }
 }
 
